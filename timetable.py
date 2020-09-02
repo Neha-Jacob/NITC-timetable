@@ -3,14 +3,18 @@ def subjects (a,b,c,d,e,f,g,h,p,q,r,s,t,u):
     return sub
 
 def OriginalTime():
-    table=[["A","F","D","B","G","P","P","P","P"],["B","G","E","C","Aa","Q","Q","Q","Q"],["C","A","F","D","H","R","R","R","R"],["D","B","G","E","----","S","S","S","S"],["E","C","A","F","Hp","T","T","T"]]
+    table=[["A","F","D","B","G","P","P","P","P","H"],["B","G","E","C","A@","Q","Q","Q","Q","H"],["C","A","F","D","H","R","R","R","R","E@"],["D","B","G","E","----","S","S","S","S","G@"],["E","C","A","F","H+","T","T","T","D+"]]
     return table
 
 def daywise(day):
-    #sub=subjects('a','b','c','d','e','f','g','h','p','q','r','s','t','u')
+    sub=subjects('a','b','c','d','e','f','g','h','p','q','r','s','t','u')
     table=OriginalTime()
-    for i in range(8):
-        print (table[day][i])
+    timing=["8am","9am","10:15am","11:15am","1pm","2pm","3pm","4pm","5pm"]
+    for i in range(9):
+        if table[day][i] == None or table[day][i]=='----':
+            print (timing[i],": ----")
+        else:
+            print (timing[i],":",sub[table[day][i]])
 
 def main():
     print("Enter the day option:'\n'1. Monday'\n'2. Tuesday'\n'3. Wednesday'\n'4. Thursday'\n'5. Friday")
