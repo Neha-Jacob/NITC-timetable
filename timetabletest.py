@@ -3,7 +3,7 @@ def subjects (a,b,c,d,e,f,g,h,p,q,r,s,t,u):
     return sub
 
 def OriginalTime():
-    table=[["A","F","D","B","G","P/E+","P","P","H"],["B","G","E","C","A@","Q/F+","Q","Q","H"],["C","A","F","D","H","R/G+","R","R","E@"],["D","B","G","E","----","S/C+","S","S","G@"],["E","C","A","F","H+","T","T","T","D+"]]
+    table=[["A","F","D","B","G","P/E+","P","P","H"],["B","G","E","C","A@","Q/F+","Q","Q","H"],["C","A","F","D","H","R/G+","R","R","E@"],["D","B","G","E","----","S/C+","S","S","G@"],["E","C","A","F","H+","T/B+","T","T","D+"]]
     return table
 
 def daywise(day,sub):
