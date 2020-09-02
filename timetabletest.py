@@ -20,7 +20,15 @@ def daywise(day,sub):
                 if ind==3:
                     x=(table[day][i])[0:1]
                     y=(table[day][i])[2:3]
-                    print (timing[i],": ",sub[x],", extra-> ",sub[y])
+                    if (sub[x]=='----' and sub[y]=='----'):
+                        print(timing[i],": ----")
+                    else:
+                        if sub[x]=='----':
+                            print (timing[i],": extra->",sub[y])
+                        else:
+                            if sub[y]=='----':
+                                print(timing[i],": ",sub[x])
+                            else:print (timing[i],": ",sub[x],", extra-> ",sub[y])
                 else:
                     x=(table[day][i])[0:1]
                     print (timing[i],": extra-> ",sub[x])
@@ -31,7 +39,16 @@ def daywise(day,sub):
                     if ind==3:
                         x=(table[day][i])[0:1]
                         y=(table[day][i])[2:3]
-                        print (timing[i],": ",sub[x],", extra-> ",sub[y])
+                        if (sub[x]=='----' and sub[y]=='----'):
+                            print(timing[i],": ----")
+                        else:
+                            if sub[x]=='----':
+                                print (timing[i],": extra->",sub[y])
+                            else:
+                                if sub[y]=='----':
+                                    print(timing[i],": ",sub[x])
+                                else:
+                                    print (timing[i],": ",sub[x],", extra-> ",sub[y])
                     else:
                         x=(table[day][i])[0:1]
                         print (timing[i],": extra-> ",sub[x])
@@ -56,9 +73,14 @@ def main():
     t=input("T. ")
     u=input("U. ")
     sub=subjects(a,b,c,d,e,f,g,h,p,q,r,s,t,u)
-    print("Enter the day option:'\n'1. Monday'\n'2. Tuesday'\n'3. Wednesday'\n'4. Thursday'\n'5. Friday")
-    day=int(input())
-    daywise(day-1,sub)
+    t="Yes"
+    while(t=="Yes"):
+        print("Enter the day option:'\n'1. Monday'\n'2. Tuesday'\n'3. Wednesday'\n'4. Thursday'\n'5. Friday")
+        day=int(input())
+        daywise(day-1,sub)
+        t=str(input("Do you want to continue? Yes/No  "))
+        if not(t=="Yes") and not(t=="No"):
+            print("ERROR!!! Invalid Input. Terminated")
 
 if __name__=="__main__":
     main()
