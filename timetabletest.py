@@ -31,8 +31,10 @@ def daywise(day,sub):
                             else:print (timing[i],": ",sub[x],", extra-> ",sub[y])
                 else:
                     x=(table[day][i])[0:1]
-                    print (timing[i],": extra-> ",sub[x])
-
+                    if sub[x]=='----':
+                            print(timing[i],": ----")
+                    else:
+                        print (timing[i],": extra-> ",sub[x])
             else:
                 if "+" in table[day][i]:
                     ind=(table[day][i]).find('+')
@@ -51,7 +53,10 @@ def daywise(day,sub):
                                     print (timing[i],": ",sub[x],", extra-> ",sub[y])
                     else:
                         x=(table[day][i])[0:1]
-                        print (timing[i],": extra-> ",sub[x])
+                        if sub[x]=='----':
+                            print(timing[i],": ----")
+                        else:
+                            print (timing[i],": extra-> ",sub[x])
                 else:
                     print (timing[i],": ",sub[table[day][i]])
 
