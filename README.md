@@ -1,3 +1,2 @@
 # timetable
-
-nitc timetable setting up
+decoding nitc timetable to batch specific timetable
